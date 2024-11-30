@@ -17,6 +17,12 @@ See the above repository for updates as well as full license text. */
     max-width: var(--uc-sidebar-width) !important;
     z-index: var(--browser-area-z-index-sidebar, 3);
 }
+#sidebar-box[positionend] {
+    direction: rtl;
+}
+#sidebar-box[positionend] > * {
+    direction: ltr;
+}
 
 #sidebar-box[positionend]:-moz-locale-dir(rtl) {
     direction: ltr;
