@@ -1,0 +1,73 @@
+/* Example userChrome.css file */
+
+/* Import your desired components first */
+
+@import url(chrome/window_control_placeholder_support.css);
+@import url(chrome/button_effect_scale_onclick.css);
+@import url(chrome/vertical_context_navigation.css);
+@import url(chrome/minimal_popup_scrollbars.css);
+@import url(chrome/button_effect_icon_glow.css);
+@import url(chrome/dark_additional_windows.css);
+@import url(chrome/dark_checkboxes_and_radios.css);
+@import url(chrome/minimal_text_fields.css);
+@import url(chrome/urlbar_centered_text.css);
+@import url(chrome/hide_tabs_toolbar_v2.css);
+@import url(chrome/autohide_sidebar.css);
+@import url(chrome/drag_window_from_urlbar.css);
+@import url(chrome/overlay_fullscreen_toolbars.css);
+@import url(chrome/autohide_toolbox.css);
+
+/* Apply your custom modifications after imports */
+
+:root {
+    --uc-toolbar-height: 20px !important;
+    /* --toolbar-bgcolor: #1b1a21 !important; */
+    /* --uc-menu-bkgnd: var(--toolbar-bgcolor); */
+    /* --arrowpanel-background: var(--toolbar-bgcolor) !important; */
+    /* --autocomplete-popup-background: var(--toolbar-bgcolor) !important; */
+    /* --uc-menu-disabled: rgb(90, 90, 90) !important; */
+    /* --lwt-toolbar-field-focus: rgb(36, 44, 59) !important; */
+}
+
+/* #sidebar-box { */
+/* --sidebar-background-color: var(--toolbar-bgcolor) !important; */
+/* } */
+/* window.sidebar-panel { */
+/* --lwt-sidebar-background-color: rgb(36, 44, 59) !important; */
+/* } */
+
+#sidebar-box {
+    --uc-sidebar-width: 44px;
+    --uc-sidebar-hover-width: 210px;
+    --uc-autohide-sidebar-delay: 100ms;
+    --uc-autohide-transition-duration: 115ms;
+    --uc-autohide-transition-type: linear;
+    position: relative;
+    min-width: var(--uc-sidebar-width) !important;
+    width: var(--uc-sidebar-width) !important;
+    max-width: var(--uc-sidebar-width) !important;
+    z-index: var(--browser-area-z-index-sidebar, 3);
+}
+
+#sidebar,
+#sidebar-header {
+    background-color: inherit !important;
+    border-inline: 0;
+    border-inline-width: 0;
+}
+
+#sidebar-header::before {
+    content: "";
+    display: flex;
+    padding-left: 40px;
+}
+
+#sidebar-header::after {
+    content: "";
+    display: unset;
+    padding-left: 5px;
+}
+
+.titlebar-buttonbox-container {
+    display: none;
+}
